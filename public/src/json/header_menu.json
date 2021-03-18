@@ -1,0 +1,20 @@
+[
+            {
+                "name": "menu",
+                "icon": "",
+                "submenus": [
+                    {
+                        "name": "menu1",
+                        "route": ""
+                    },
+                    {
+                        "name": "menu2",
+                        "route": ""
+                    },
+                    {
+                        "name": "menu3",
+                        "route": ""
+                    }
+                ]
+            }
+        ]
