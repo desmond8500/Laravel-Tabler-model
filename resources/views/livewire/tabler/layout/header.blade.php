@@ -12,20 +12,25 @@
           <div class="navbar-nav flex-row order-md-last">
 
             <div class="nav-item dropdown">
-              <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                <span class="avatar avatar-sm" style="background-image: url({{ asset('src/template/tabler/demo/static/avatars/000m.jpg') }})"></span>
-                <div class="d-none d-xl-block ps-2">
-                  <div>Paweł Kuna</div>
-                  <div class="mt-1 small text-muted">{{ $user->profession ?? '' }}</div>
-                </div>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <a href="{{ route('tabler.config.profile') }}" class="dropdown-item">Profile</a>
-                <a href="{{ route('tabler.admin.index') }}" class="dropdown-item">Admin</a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">Paramètres</a>
-                <a href="#" class="dropdown-item">Déconnexion</a>
-              </div>
+                @auth
+                    <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+                        <span class="avatar avatar-sm" style="background-image: url({{ asset('src/template/tabler/demo/static/avatars/000m.jpg') }})"></span>
+                        <div class="d-none d-xl-block ps-2">
+                            <div>Paweł Kuna</div>
+                            <div class="mt-1 small text-muted">{{ $user->profession ?? '' }}</div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <a href="{{ route('tabler.config.profile') }}" class="dropdown-item">Profile</a>
+                        <a href="{{ route('tabler.admin.index') }}" class="dropdown-item">Admin</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">Paramètres</a>
+                        <a href="{{ route('tabler.logout') }}" class="dropdown-item">Déconnexion</a>
+                    </div>
+
+                @else
+                    <a class="btn btn-primary" href="{{ route('login') }}">Connexion</a>
+                @endauth
             </div>
           </div>
           <div class="collapse navbar-collapse" id="navbar-menu">

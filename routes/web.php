@@ -3,6 +3,7 @@
 use App\Http\Livewire\Tabler\Admin\Index as AdminIndex;
 use App\Http\Livewire\Tabler\Pages\Index;
 use App\Http\Livewire\Tabler\User\Profile;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,11 +17,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //===============================================================================================================================
 // Tabler Template
 //===============================================================================================================================
-    Route::get('tablers', Index::class)->name('tabler.index');
-    // Config
-    Route::get('tablers/config/profile',    Profile::class)->name('tabler.config.profile');
-    Route::get('tablers/admin',    AdminIndex::class)->name('tabler.admin.index');
+Route::middleware(['auth'])->group(
+    function () {
 
+        Route::get('tablers', Index::class)->name('tabler.index');
+        // Config
+        Route::get('tablers/config/profile',    Profile::class)->name('tabler.config.profile');
+        // Admin
+        Route::get('tablers/admin',    AdminIndex::class)->name('tabler.admin.index');
+        Route::get('/tabler/logout', function () {
+            Auth::logout();
+            return redirect()->route('index');
+        })->name('tabler.logout');
+
+    });
 
 //===============================================================================================================================
 // Infyom Routes
