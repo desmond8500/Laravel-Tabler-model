@@ -13,6 +13,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/pdf', [App\Http\Controllers\TablerController::class, 'pdf'])->name('pdf');
 
 //===============================================================================================================================
 // Tabler Template

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32c350977407a2c943151fff50ded80a",
+    "content-hash": "4bd30b710fd97c05aea9a6f21b69db38",
     "packages": [
         {
             "name": "appointer/swaggervel",
@@ -1457,16 +1457,16 @@
         },
         {
             "name": "laravel/sanctum",
-            "version": "v2.9.0",
+            "version": "v2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "eb191ddfc3ec04bbead33593bf982e871095f25c"
+                "reference": "d1e2354d94adad9685cf59b2ab0727b8d8f0a19c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/eb191ddfc3ec04bbead33593bf982e871095f25c",
-                "reference": "eb191ddfc3ec04bbead33593bf982e871095f25c",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/d1e2354d94adad9685cf59b2ab0727b8d8f0a19c",
+                "reference": "d1e2354d94adad9685cf59b2ab0727b8d8f0a19c",
                 "shasum": ""
             },
             "require": {
@@ -1513,7 +1513,11 @@
                 "laravel",
                 "sanctum"
             ],
-            "time": "2021-01-26T19:47:38+00:00"
+            "support": {
+                "issues": "https://github.com/laravel/sanctum/issues",
+                "source": "https://github.com/laravel/sanctum"
+            },
+            "time": "2021-03-09T19:17:50+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -7351,10 +7355,10 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "appointer/swaggervel": 20,
         "infyomlabs/coreui-templates": 20,
         "infyomlabs/generator-builder": 20,
         "infyomlabs/laravel-generator": 20,
-        "appointer/swaggervel": 20,
         "infyomlabs/swagger-generator": 20
     },
     "prefer-stable": true,
@@ -7362,5 +7366,6 @@
     "platform": {
         "php": "^7.3|^8.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }
